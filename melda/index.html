@@ -28,7 +28,7 @@
   --leaf:#5E8C78; --stem:#4F6B5E;
   --error-500:#F04438;
   --ph-menstrual:var(--pink-500); --ph-follicular:var(--cyan-500); --ph-ovulatory:var(--yel-500); --ph-luteal:var(--lav-500);
-  --bg-top:#FFFBEA; --bg-mid:#FFF9F0; --bg-bottom:#EFEAFF;
+  --bg-top:#FFFCF3; --bg-mid:#FFFDF9; --bg-bottom:#F7F5FF;
   --grad:linear-gradient(135deg,#FFB38A 0%,#EE5A78 40%,#8B5CF6 75%,#5038ED 100%);
   --r-md:8px; --r-lg:10px; --r-xl:12px; --r-2xl:16px; --r-3xl:20px; --r-4xl:24px; --r-full:999px;
   --sh-xs:0 1px 2px rgba(16,24,40,.05);
@@ -64,7 +64,7 @@ a{color:inherit}
 
 /* Shell */
 .app{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column}
-.top{position:sticky;top:0;z-index:20;background:rgba(255,251,234,.85);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px)}
+.top{position:sticky;top:0;z-index:20;background:rgba(255,252,243,.85);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px)}
 .top-in{height:60px;max-width:var(--col);margin:0 auto;padding:0 var(--pad);display:grid;grid-template-columns:64px 1fr 64px;align-items:center}
 .iconbtn{width:40px;height:40px;margin-left:-8px;border-radius:var(--r-full);display:grid;place-items:center;color:var(--gray-900);background:none;border:0}
 .iconbtn:hover{background:rgba(16,24,40,.05)}
@@ -80,7 +80,7 @@ a{color:inherit}
 .main{flex:1;width:100%;max-width:var(--col);margin:0 auto;padding:20px var(--pad) 32px}
 .main.anim{animation:in .35s cubic-bezier(.2,.8,.2,1)}
 @keyframes in{from{opacity:0}to{opacity:1}}
-.foot{position:sticky;bottom:0;z-index:10;padding:16px var(--pad) calc(16px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(250,247,255,0),rgba(250,247,255,.96) 35%)}
+.foot{position:sticky;bottom:0;z-index:10;padding:16px var(--pad) calc(16px + env(safe-area-inset-bottom));background:linear-gradient(180deg,rgba(247,245,255,0),rgba(247,245,255,.96) 35%)}
 .foot-in{max-width:calc(var(--col) - 2*var(--pad));margin:0 auto;display:grid;gap:8px}
 .sitefoot{background:rgba(255,255,255,.55);border-top:1px solid var(--gray-200);padding:20px;text-align:center;font-size:13px;color:var(--gray-600);display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center}
 .sitefoot a{text-decoration:none}.sitefoot a:hover{text-decoration:underline}
