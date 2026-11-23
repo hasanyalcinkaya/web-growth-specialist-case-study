@@ -526,7 +526,8 @@ const GOALS = {
   none:{l:'None of the above',i:'💜',goal:'Feel more in tune with your cycle',mini:['📅 Day 10 · Follicular','✨ Daily tips']},
 };
 const goalList=()=> minor() ? ['period','body','mood','none'] : ['period','body','sync','mood','ai','ovulation','pregnancy','none'];
-const mainGoal=()=> (S.goals.filter(g=>g!=='none')[0]) || 'none';
+// pregnancy always wins: if it's selected, the pregnancy flow opens whatever else is chosen
+const mainGoal=()=> (S.goals.includes('pregnancy') && !minor()) ? 'pregnancy' : ((S.goals.filter(g=>g!=='none')[0]) || 'none');
 
 /* ============================================================
    QUESTION FACTORIES
