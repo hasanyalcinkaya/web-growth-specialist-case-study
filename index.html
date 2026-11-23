@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Web Growth Case Study</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#101828;--mut:#475467;--sub:#667085;--line:#EAECF0;--card:#fff;--pri:#5038ED;--pri50:#F3F1FF;--bg:#FFF9F0}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--ink:#F5F5F6;--mut:#CECFD2;--sub:#94969C;--line:#1F242F;--card:#161B26;--pri:#9E8CFF;--pri50:#1E1A3A;--bg:#0C111D}}
+:root[data-theme=dark]{--ink:#F5F5F6;--mut:#CECFD2;--sub:#94969C;--line:#1F242F;--card:#161B26;--pri:#9E8CFF;--pri50:#1E1A3A;--bg:#0C111D}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100vh}
+.banner{background:#101828;color:#fff;font-size:12px;text-align:center;padding:7px 16px}
+.banner b{color:#F7D56B}
+.wrap{max-width:880px;margin:0 auto;padding:56px 16px 80px}
+.eyebrow{font-size:13px;font-weight:600;color:var(--pri)}
+h1{font-size:clamp(30px,5vw,44px);line-height:1.15;letter-spacing:-.02em;font-weight:800;margin-top:8px}
+.lead{font-size:17px;color:var(--mut);margin-top:12px;max-width:620px}
+.grid{display:grid;gap:16px;margin-top:40px}
+@media(min-width:720px){.grid{grid-template-columns:1fr 1fr}}
+a.card,.card{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;text-decoration:none;color:inherit;box-shadow:0 1px 3px rgba(16,24,40,.08);transition:transform .15s,box-shadow .15s}
+a.card:hover{transform:translateY(-2px);box-shadow:0 12px 24px -8px rgba(16,24,40,.15)}
+.tag{align-self:flex-start;font-size:12px;font-weight:600;padding:3px 10px;border-radius:999px;background:var(--pri50);color:var(--pri)}
+.card h2{font-size:22px;letter-spacing:-.01em}
+.card p{color:var(--mut);font-size:15px}
+.card .go{margin-top:auto;font-weight:600;color:var(--pri);font-size:15px}
+.card.soon{opacity:.6}
+.foot{margin-top:40px;font-size:13px;color:var(--sub)}
+</style>
+</head>
+<body>
+<div class="banner" role="note"><b>Case study prototypes</b> · Not real product pages or checkouts. No data is collected.</div>
+<main class="wrap">
+  <span class="eyebrow">Web Growth Specialist · Case study</span>
+  <h1>Two end-to-end web funnels</h1>
+  <p class="lead">Screen-by-screen, clickable prototypes. Both work on mobile and desktop.</p>
+  <div class="grid">
+    <a class="card" href="melda/">
+      <span class="tag">Web-to-web quiz funnel</span>
+      <h2>Melda: Cycle Sync</h2>
+      <p>Age and goal entry, a 23-step personalised quiz with an under-18 branch, plan build, trial offer, checkout and app download.</p>
+      <span class="go">Open prototype →</span>
+    </a>
+    <div class="card soon" aria-disabled="true">
+      <span class="tag">E-commerce funnel</span>
+      <h2>Nootly: Personalised Notebooks</h2>
+      <p>Landing to completed purchase, with live notebook personalisation.</p>
+      <span class="go">Coming soon</span>
+    </div>
+  </div>
+  <p class="foot">Tip: in each prototype, the “Screens” tab on the edge lets you jump to any step.</p>
+</main>
+</body>
+</html>
