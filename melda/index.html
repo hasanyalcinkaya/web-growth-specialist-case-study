@@ -959,7 +959,7 @@ function render(){
   const foot=sc.foot?sc.foot():'';
   app.innerHTML = header(sc) + `<main class="main ${animateNext?'anim':''}">${sc.render()}</main>` + (foot?`<div class="foot"><div class="foot-in">${foot}</div></div>`:'')
     + (sc.footer?`<footer class="sitefoot"><a href="#">Privacy Policy</a><span>·</span><a href="#">Terms of Use</a><span>·</span><a href="#">Accessibility</a><span style="flex-basis:100%">Melda is a wellness app, not a medical device.</span></footer>`:'')
-    + navFab();
+    ;
   animateNext=false;
   document.title='Melda · '+sc.title;
   emojify(app);
