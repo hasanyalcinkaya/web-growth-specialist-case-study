@@ -998,7 +998,10 @@ askScreen('ask', ()=>mainGoal()!=='ai'),
     const num=document.getElementById('tnum'), card=document.getElementById('tcard'), st=document.getElementById('upstage');
     const showAll=()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
     const reveal=()=>document.querySelectorAll('.reveal').forEach((el,i)=>timers.push(setTimeout(()=>el.classList.add('in'),i*220)));
-    if(matchMedia('(prefers-reduced-motion: reduce)').matches){ num.textContent='30'; showAll(); return; }
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+      /* Reduce Motion: no shake, scale or confetti, but the 7 → 30 count still shows the upgrade */
+      timers.push(setTimeout(()=>{ const t0=performance.now(); const iv=setInterval(()=>{ const t=Math.min(1,(performance.now()-t0)/900); num.textContent=Math.round(7+23*t); if(t>=1){ clearInterval(iv); num.textContent='30'; timers.push(setTimeout(showAll,250)); } },60); timers.push(iv); },500));
+      return; }
     timers.push(setTimeout(()=>{
       card.classList.remove('nopop'); card.classList.add('counting');
       const t0=performance.now();
