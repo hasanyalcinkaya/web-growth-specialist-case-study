@@ -408,6 +408,18 @@ textarea.input{height:auto;padding:12px 14px;resize:vertical;min-height:96px}
 .sum-item span{font-size:12px;color:var(--muted)}
 .secure{display:flex;gap:6px;align-items:center;justify-content:center;font-size:13px;color:var(--muted)}
 
+/* Gift finder speech bubble on the hero covers */
+.hero-visual{position:relative;padding-top:56px}
+.bubble{position:absolute;top:0;right:4%;z-index:5;display:flex;align-items:center;gap:12px;padding:12px 18px 12px 12px;background:#fff;border:1px solid var(--line);border-radius:18px;box-shadow:var(--sh-md);text-decoration:none;max-width:290px;animation:bob 3.2s ease-in-out infinite;transition:border-color .15s,box-shadow .15s}
+.bubble:hover{border-color:var(--terra);box-shadow:var(--sh-lg)}
+.bubble::after{content:"";position:absolute;bottom:-8px;left:34px;width:16px;height:16px;background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transform:rotate(45deg);border-bottom-right-radius:3px}
+.bubble .ic{flex:none;width:40px;height:40px;border-radius:50%;background:var(--terra-50);display:grid;place-items:center}
+.bubble .ic .emo{width:22px;height:22px;vertical-align:0}
+.bubble b{display:block;font-family:var(--display);font-weight:400;font-style:italic;font-size:21px;line-height:1.1}
+.bubble span span{display:block;font-size:13px;font-weight:600;color:var(--terra);margin-top:2px}
+@keyframes bob{50%{transform:translateY(-5px)}}
+@media(min-width:960px){.hero-visual{padding-top:44px}.bubble{right:auto;left:32%;top:0}}
+
 /* Gift finder */
 .finder-cta{display:flex;align-items:center;gap:14px;margin-top:20px;padding:14px 16px;border:1px solid var(--line);border-radius:var(--r-md);background:#fff;text-decoration:none;max-width:440px;transition:border-color .15s}
 .finder-cta:hover{border-color:var(--ink)}
@@ -684,12 +696,14 @@ home(){
       <p class="t-lg ink2 mt16" style="max-width:480px">Choose a design, add a name, a message or a monogram, and we’ll print it for free. Dispatched the next working day.</p>
       <label class="t-sm" for="hn" style="display:block;margin-top:24px;font-weight:600">Try it: type a name to see it on our covers</label>
       <div class="hero-name"><input class="input" id="hn" data-bind="heroName" maxlength="16" placeholder="e.g. Emma" value="${esc(S.heroName)}" autocomplete="off"><button class="btn btn-dark" data-act="occ" data-v="all">Shop notebooks</button></div>
-      <a class="finder-cta" href="#finder" data-act="finder"><span class="ic">🎁</span><span><b>Know who it’s for, but not what to get?</b><span>Find the perfect notebook in 30 seconds</span></span><span class="arr">→</span></a>
     </div>
-    <div class="hero-covers" aria-hidden="true">
-      <div class="c c1">${cover(PBY.botanica,{color:'blush'})}</div>
-      <div class="c c2">${cover(PBY.classic,{color:'forest'})}</div>
-      <div class="c c3">${cover(PBY.pocket,{color:'mustard'})}</div>
+    <div class="hero-visual">
+      <a class="bubble" href="#finder" data-act="finder"><span class="ic">🎁</span><span><b>Don’t know what to get?</b><span>Try our 30-second gift finder →</span></span></a>
+      <div class="hero-covers" aria-hidden="true">
+        <div class="c c1">${cover(PBY.botanica,{color:'blush'})}</div>
+        <div class="c c2">${cover(PBY.classic,{color:'forest'})}</div>
+        <div class="c c3">${cover(PBY.pocket,{color:'mustard'})}</div>
+      </div>
     </div>
   </section>
   <div class="wrap"><div class="trust">
