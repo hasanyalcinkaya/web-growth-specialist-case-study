@@ -103,6 +103,8 @@ img{max-width:100%}
 
 /* Page */
 main{animation:fade .3s}
+main{overflow-x:clip}
+.grid-p>*,.occ>*,.revs>*,.steps3>*,.pdp>*,.bk>*,.qa>*,.co>*{min-width:0}
 main.noanim{animation:none}
 .sec{padding:56px 0}
 .sec.tint{background:var(--paper-2)}
@@ -180,7 +182,7 @@ main.noanim{animation:none}
 .chips::-webkit-scrollbar{display:none}
 .chip{flex:none;height:38px;padding:0 16px;border-radius:var(--r-full);border:1px solid var(--line);background:#fff;font-size:14px;font-weight:500}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
-.select{height:40px;padding:0 34px 0 12px;border:1px solid var(--line);border-radius:var(--r-sm);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231F2A24' stroke-width='1.6' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;-webkit-appearance:none;appearance:none;font-size:14px}
+.select{height:42px;padding:0 34px 0 12px;font-size:16px!important;border:1px solid var(--line);border-radius:var(--r-sm);background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231F2A24' stroke-width='1.6' fill='none'/%3E%3C/svg%3E") no-repeat right 12px center;-webkit-appearance:none;appearance:none;font-size:14px}
 .grid-p{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 16px}
 @media(min-width:760px){.grid-p{grid-template-columns:repeat(3,1fr)}}
 @media(min-width:1080px){.grid-p{grid-template-columns:repeat(4,1fr);gap:36px 24px}}
@@ -294,13 +296,15 @@ textarea.input{height:auto;padding:12px 14px;resize:vertical;min-height:96px}
 .ed-top .ttl span{font-size:13px;color:var(--ink-2)}
 .ed{display:grid;gap:0}
 @media(min-width:960px){.ed{grid-template-columns:1fr 420px;min-height:calc(100vh - 64px)}}
-.stage{background:var(--paper-2);display:grid;place-items:center;padding:20px 27%;position:relative}
-@media(min-width:960px){.stage{padding:48px 22%}}
+.stage{background:var(--paper-2);display:grid;place-items:center;padding:20px 16px;position:relative}
+.stage>div{min-width:0;width:100%}
+.stage .canvas{width:58%;max-width:380px}
+@media(min-width:960px){.stage{padding:48px 22%}.stage .canvas{width:100%}}
 .stage .hint{position:absolute;top:12px;left:0;right:0;text-align:center;font-size:13px;color:var(--ink-2)}
-.surf{display:flex;gap:6px;justify-content:center;margin-bottom:18px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;width:max-content;margin-left:auto;margin-right:auto}
-.surf button{height:36px;padding:0 18px;border-radius:999px;font-size:14px;font-weight:500;color:var(--ink-2)}
+.surf{display:flex;gap:4px;justify-content:center;margin-bottom:18px;background:#fff;border:1px solid var(--line);border-radius:999px;padding:4px;width:max-content;max-width:100%;margin-left:auto;margin-right:auto}
+.surf button{height:38px;padding:0 16px;border-radius:999px;font-size:14px;font-weight:500;color:var(--ink-2)}
 .surf button.on{background:var(--ink);color:#fff}
-.stage .canvas{width:100%;max-width:380px}
+
 .hot{outline:2px dashed #E3A32B;outline-offset:6px;border-radius:4px}
 .controls{background:#fff;padding:22px var(--pad) 120px;border-left:1px solid var(--line)}
 @media(min-width:960px){.controls{padding:28px 28px 40px}}
@@ -441,12 +445,20 @@ textarea.input{height:auto;padding:12px 14px;resize:vertical;min-height:96px}
 .qopt .e{width:56px;height:56px;border-radius:50%;background:var(--paper-2);display:grid;place-items:center}
 .qopt .e .emo{width:28px;height:28px;vertical-align:0}
 .qopt small{display:block;font-weight:400;font-size:13px;color:var(--muted);margin-top:-6px}
-.best{display:grid;gap:20px;padding:22px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line)}
-@media(min-width:760px){.best{grid-template-columns:240px 1fr;align-items:center;gap:32px;padding:28px}}
+.best{display:grid;grid-template-columns:minmax(0,1fr);gap:20px;padding:20px;border-radius:var(--r-lg);background:#fff;border:1px solid var(--line)}
+.best>*,.alt>*{min-width:0}
+.best .btn,.alt .btn{white-space:normal;text-align:center;height:auto;min-height:48px;padding-top:10px;padding-bottom:10px;line-height:1.25}
+.alt .btn{min-height:40px}
+@media(max-width:759px){.best .art{max-width:260px;justify-self:center;width:100%}.best .btn{width:100%}}
+@media(min-width:760px){.best{grid-template-columns:240px minmax(0,1fr);align-items:center;gap:32px;padding:28px}}
 .best .art{background:var(--paper-2);border-radius:10px;padding:12% 18%}
 .mtag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.04em;padding:3px 10px;border-radius:999px;background:var(--forest);color:#fff}
-.alts{display:grid;gap:14px;grid-template-columns:1fr 1fr}
-.alt{display:grid;gap:10px;padding:16px;border-radius:var(--r-md);background:#fff;border:1px solid var(--line)}
+.alts{display:grid;gap:12px;grid-template-columns:minmax(0,1fr)}
+@media(min-width:640px){.alts{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}}
+.alt{display:grid;grid-template-columns:96px minmax(0,1fr);column-gap:14px;row-gap:10px;align-items:center;padding:14px;border-radius:var(--r-md);background:#fff;border:1px solid var(--line)}
+.alt .art{grid-row:span 2}
+.alt .btn{justify-self:start}
+@media(min-width:640px) and (max-width:759px){.alt{grid-template-columns:minmax(0,1fr)}.alt .art{grid-row:auto}}
 .alt .art{background:var(--paper-2);border-radius:8px;padding:12% 20%}
 @media(min-width:760px){.alt{grid-template-columns:140px 1fr;align-items:center;column-gap:18px}.alt .art{grid-row:span 2}.alt .btn{justify-self:start}}
 .qa{display:grid;gap:28px;padding-bottom:32px}
@@ -751,7 +763,7 @@ shop(){
     <div class="crumbs"><a href="#home" data-act="go" data-v="home">Home</a> / Notebooks${S.occ!=='all'?' / '+ol:''}</div>
     <h1 class="disp h2">${S.occ==='all'?'Personalised <i>notebooks</i>':`Notebooks <i>${ol.toLowerCase()}</i>`}</h1>
     <p class="t-md ink2 mt8" style="max-width:640px">Every design is personalised for free and printed to order in the UK.${S.heroName.trim()?` Showing <b>${esc(S.heroName.trim())}</b> on every cover.`:''}</p>
-    <div class="row mt16" style="flex-wrap:wrap;gap:10px"><label class="t-sm" for="hn2" style="font-weight:600">Preview a name:</label><input class="input" id="hn2" data-bind="heroName" maxlength="16" placeholder="Type a name" value="${esc(S.heroName)}" style="max-width:220px;height:40px;font-size:15px" autocomplete="off"></div>
+    <div class="row mt16" style="flex-wrap:wrap;gap:10px"><label class="t-sm" for="hn2" style="font-weight:600">Preview a name:</label><input class="input" id="hn2" data-bind="heroName" maxlength="16" placeholder="Type a name" value="${esc(S.heroName)}" style="max-width:220px;height:44px;font-size:16px" autocomplete="off"></div>
     <div class="chips mt24" role="tablist" aria-label="Occasion">${OCCASIONS.map(([k,l])=>`<button class="chip ${S.occ===k?'on':''}" data-act="occ" data-v="${k}" role="tab" aria-selected="${S.occ===k}">${l}</button>`).join('')}</div>
     <div class="row between mt16" style="border-top:1px solid var(--line);padding-top:14px"><span class="t-sm muted">${list.length} design${list.length===1?'':'s'}</span>
       <label class="row t-sm" style="gap:8px">Sort by <select class="select" data-bind="sort"><option value="fav" ${S.sort==='fav'?'selected':''}>Our favourites</option><option value="rated" ${S.sort==='rated'?'selected':''}>Top rated</option><option value="low" ${S.sort==='low'?'selected':''}>Price: low to high</option><option value="high" ${S.sort==='high'?'selected':''}>Price: high to low</option></select></label></div>
